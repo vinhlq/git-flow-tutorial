@@ -156,6 +156,7 @@
         > git flow release finish VERSION
     - Push
         > git push origin master
+        
         > git push --follow-tags origin
 6. Release hot-fix
     - Update
@@ -166,6 +167,7 @@
         > git flow hotfix finish VERSION
     - Push
         > git push origin master
+        
         > git push --follow-tags origin
         
 
