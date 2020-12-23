@@ -11,7 +11,7 @@
 # <a name="introduction"></a>Introduction
 
 - [Git flow](https://github.com/nvie/gitflow) là một cơ chế quản lý [semantic](https://semver.org) version cho git project
-- Tài liệu này nhắm làm rõ vai trò của developer và maintainer trong git-flow
+- Tài liệu này nhằm làm rõ vai trò của developer và maintainer trong git-flow
 
 # <a name="installation"></a>Installation
 1. [Linux](https://github.com/nvie/gitflow/wiki/Linux)
@@ -61,12 +61,14 @@
 
 # <a name="developer-work-flow"></a>Developer workflow
 - Vai trò của developer
-    1. Phát triển các tính năng(feature), fix bug và đưa phần việc của mình lên remote git
+    1. Phát triển các tính năng(feature)
+    2. Fix bug
+    3. Phát hành version hotfix
 - Các bước thực hiện
     1. Clone project từ remote git
     2. Init git-flow
         > git flow init
-        - Sau bước này sẽ tạo ra 1 nhánh develop là nhánh rẽ từ nhánh master
+        - Sau bước này sẽ tạo ra 1 nhánh develop mirror từ nhánh master
     3. Thêm 1 feature cho project (feature)
         - Start
             > git flow feature start feature_name
@@ -141,3 +143,4 @@
 # <a name="references"></a>Tham khảo
 1. [Git-flow workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 2. [Git-flow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet)
+3. [The easy release management workflow](https://blog.axosoft.com/gitflow)
