@@ -6,7 +6,7 @@
 4. [Vai trò của các nhánh](#branching)
 5. [Developer workflow](#developer-work-flow)
 6. [Maintainer workflow](#maintainer-work-flow)
-7. [Tham kháo](#references)
+7. [Tham khảo](#references)
 
 # <a name="introduction"></a>Introduction
 
