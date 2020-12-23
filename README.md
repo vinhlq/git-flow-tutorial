@@ -60,67 +60,95 @@
     - Xóa khi kết thúc quá trinh
 
 # <a name="developer-work-flow"></a>Developer workflow
-- Vai trò của developer
-    1. Phát triển các tính năng(feature)
-    2. Fix bug
-    3. Phát hành version hotfix
-- Các bước thực hiện
-    1. Clone project từ remote git
-    2. Init git-flow
-        > git flow init
-        - Sau bước này sẽ tạo ra 1 nhánh develop mirror từ nhánh master
-    3. Thêm 1 feature cho project (feature)
-        - Start
-            > git flow feature start feature_name
-        - Sau bước này sẽ tạo ra 1 nhánh feature/feature_name mirror từ nhánh develop
-        - Publish feature lên remote git
-            > git flow feature publish feature_name
-            - Sau bước này trên remote git sẽ có thêm nhánh feature/feature_name là mirror của local
-        - Cập nhật 1 tính năng từ remote git
-            > git flow feature track feature_name
-            - Sau bước này local git sẽ có thêm nhánh feature/feature_name là mirror của remote
-    4. Fix-bug
-        - Start
-            > git flow bugfix start bugfix_name
-            - Sau bước này sẽ tạo ra 1 nhánh bugfix/bugfix_name mirror từ nhánh develop
-        - Publish nhánh bug-fix lên remote git
-            > git flow bugfix publish bugfix_name
-            - Sau bước này trên remote git sẽ có thêm nhánh bugfix/bugfix_name là mirror của local
-        - Cập nhật nhánh bug-fix từ remote git
-            > git flow bugfix track bugfix_name
-            - Sau bước này local git sẽ có thêm nhánh bugfix/bugfix_name là mirror của remote
-    5. Hot-fix
-        - Start
-            > git flow hotfix start VERSION [BASE_VERSION]
-            - Bắt đầu sửa lỗi cho version BASE_VERSION, **VD base version là 1.0 hotfix version là 1.0.1**
-            - Sau bước này sẽ tạo ra 1 nhánh hotfix/VERSION mirror từ nhánh master
-        - Publish nhánh hot-fix lên remote git
-            > git flow hotfix publish VERSION
-            - Sau bước này trên remote git sẽ có thêm nhánh hotfix/VERSION là mirror của local
-        - Cập nhật nhánh bug-fix từ remote git
-            > git flow hotfix track VERSION
-            - Sau bước này local git sẽ có thêm nhánh hotfix/VERSION là mirror của remote
-
-# <a name="maintainer-work-flow"></a>Maintainer workflow
-- Vai trò của maintainer:
-    1. Kết thúc quá trình phát triển thêm feature và bug-fix
-    2. Release version từ nhánh develop về master
+## Vai trò của developer
+1. Phát triển các tính năng(feature)
+2. Fix bug
+3. Phát hành version hotfix
+## Các bước thực hiện
 1. Clone project từ remote git
 2. Init git-flow
     > git flow init
-    - Sau bước này sẽ tạo ra 1 nhánh develop là nhánh rẽ từ nhánh master
+    
+    Sau bước này sẽ tạo ra 1 nhánh develop mirror từ nhánh master
+    
+3. Thêm 1 feature cho project (feature)
+- Start
+    > git flow feature start feature_name
+
+    Sau bước này sẽ tạo ra 1 nhánh feature/feature_name mirror từ nhánh develop
+
+- Publish feature lên remote git
+    > git flow feature publish feature_name
+
+    Sau bước này trên remote git sẽ có thêm nhánh feature/feature_name là mirror của local
+
+- Cập nhật 1 tính năng từ remote git
+    > git flow feature track feature_name
+
+    Sau bước này local git sẽ có thêm nhánh feature/feature_name là mirror của remote
+
+4. Fix-bug
+    - Start
+        > git flow bugfix start bugfix_name
+
+        Sau bước này sẽ tạo ra 1 nhánh bugfix/bugfix_name mirror từ nhánh develop
+
+    - Publish nhánh bug-fix lên remote git
+        > git flow bugfix publish bugfix_name
+
+        Sau bước này trên remote git sẽ có thêm nhánh bugfix/bugfix_name là mirror của local
+
+    - Cập nhật nhánh bug-fix từ remote git
+        > git flow bugfix track bugfix_name
+
+        Sau bước này local git sẽ có thêm nhánh bugfix/bugfix_name là mirror của remote
+
+5. Hot-fix
+    - Start
+        > git flow hotfix start VERSION [BASE_VERSION]
+
+        Bắt đầu sửa lỗi cho version BASE_VERSION, **VD base version là 1.0 hotfix version là 1.0.1**
+        Sau bước này sẽ tạo ra 1 nhánh hotfix/VERSION mirror từ nhánh master
+
+    - Publish nhánh hot-fix lên remote git
+        > git flow hotfix publish VERSION
+
+        Sau bước này trên remote git sẽ có thêm nhánh hotfix/VERSION là mirror của local
+
+    - Cập nhật nhánh bug-fix từ remote git
+        > git flow hotfix track VERSION
+
+        Sau bước này local git sẽ có thêm nhánh hotfix/VERSION là mirror của remote
+
+# <a name="maintainer-work-flow"></a>Maintainer workflow
+## Vai trò của maintainer:
+1. Kết thúc quá trình phát triển thêm feature và bug-fix
+2. Release version từ nhánh develop về master
+## Các bước thực hiện
+1. Clone project từ remote git
+2. Init git-flow
+    > git flow init
+    
+    Sau bước này sẽ tạo ra 1 nhánh develop mirror từ nhánh master
+    
 3. Merge 1 feature từ remote git
     - Update
         > git flow feature track feature_name
-        - Sau bước này local git sẽ có thêm nhánh feature/feature_name là mirror của remote
+        
+        Sau bước này local git sẽ có thêm nhánh feature/feature_name là mirror của remote
+        
     - Merge
-        git flow feature finish feature_name
+        > git flow feature finish feature_name
+        
 4. Merge 1 bug-fix từ remote git
     - Update
         > git flow bugfix track bugfix_name
-        - Sau bước này local git sẽ có thêm nhánh bugfix/bugfix_name là mirror của remote
+        
+        Sau bước này local git sẽ có thêm nhánh bugfix/bugfix_name là mirror của remote
+        
     - Merge
-        git flow bugfix finish bugfix_name
+        > git flow bugfix finish bugfix_name
+        
 5. Release version từ nhánh master
     - Start
         > git flow release start VERSION [BASE_VERSION]
@@ -132,7 +160,8 @@
 6. Release hot-fix
     - Update
         > git flow hotfix track VERSION
-        - Sau bước này local git sẽ có thêm nhánh hotfix/VERSION là mirror của remote
+        
+        Sau bước này local git sẽ có thêm nhánh hotfix/VERSION là mirror của remote
     - Finish
         > git flow hotfix finish VERSION
     - Push
