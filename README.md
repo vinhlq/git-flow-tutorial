@@ -45,8 +45,8 @@
     - Chỉ tồn tại ở local
 3. Feature/feature_name & bugfix/bugfix_name
     - Là nhánh phát sinh tạm thời phục vụ cho quá trình develop
-    - Là mirror cả develop HEAD
-    - Tồn tại cả ở remote và local git
+    - Là mirror của develop HEAD
+    - Tồn tại ở remote và local git
     - Có thể xóa khi kết thúc quá trinh
 4. Release/version_name
     - Là nhánh phát sinh tạm thời phục vụ cho quá trình release
